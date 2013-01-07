@@ -51,26 +51,23 @@ while True:
   # Apply adjustment to tweak result
   distance = distance - adjustment
   if distance > 99:
-  	show = int(distance)
+    show = int(distance)
+    number_string = str(show)
+
+    for i in range(0,4):
+      if i != 2:
+        segment.writeDigit(i, int(number_string[i]));
+
   else:
-  	show = round(distance,2)
-
+    show = round(distance,2)
+    number_string = str(show)    
+    if show > 10:
+              segment.writeDigit(0, int(number_string[0]));
+              segment.writeDigit(1, int(number_string[1]),True);
+              segment.writeDigit(3, int(number_string[3]));
+              segment.writeDigit(4, int(number_string[4]));
     
-  //print "Distance : %s" % show
-  #number_string = str(show)
-  #for i in range(len(number_string)):
- # 	if i != 2:
-#		print "Distance: %s" % number_string  
- # 		segment.writeDigit(i, int(number_string[i]));
-
-
-
-  #print "Distance : %s" % number_string
-
-  #segment.writeDigit(1, int(number_string[1]))
-  #segment.writeDigit(3, int(number_string[2]))
-  #segment.writeDigit(4, int(number_string[3])) 
-
+  
   # Wait one second
   time.sleep(1)
 
