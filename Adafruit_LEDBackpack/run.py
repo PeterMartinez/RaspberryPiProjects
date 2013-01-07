@@ -53,18 +53,24 @@ while True:
 
   # print "Distance : %.1f" % distance
   number_string = str(distance)
+  i=0
+  for ch in number_string:
+    x = i+1;
+    if number_string[x] == ".":
+      segment.writeDigit(i, int(number_string[i]),True);
+      i = i+2;
+    else:
+      segment.writeDigit(i, int(number_string[i]));
+      i = i+1;
 
-  now = datetime.datetime.now()
-  second = now.second
-  
+
+
   #print "Distance : %s" % number_string[0]
 
-  segment.writeDigit(0, int(number_string[0]))
   #segment.writeDigit(1, int(number_string[1]))
   #segment.writeDigit(3, int(number_string[2]))
   #segment.writeDigit(4, int(number_string[3])) 
-  # Toggle color
-  segment.setColon(second % 2)              # Toggle colon at 1Hz
+
   # Wait one second
   time.sleep(1)
 
