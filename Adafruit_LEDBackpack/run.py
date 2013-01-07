@@ -50,27 +50,22 @@ while True:
 
   # Apply adjustment to tweak result
   distance = distance - adjustment
-  show = 0;
   if distance > 99:
-    show = int(distance);
+  	show = int(distance)
   else:
-    show = distance;
+  	show = round(distance,2)
+
     
-  # print "Distance : %.1f" % distance
-  number_string = str(distance)
-  i=0
-  for ch in number_string:
-    x = i+1;
-    if number_string[x] == ".":
-      segment.writeDigit(i, int(number_string[i]),True);
-      i = i+2;
-    else:
-      segment.writeDigit(i, int(number_string[i]));
-      i = i+1;
+  //print "Distance : %s" % show
+  #number_string = str(show)
+  #for i in range(len(number_string)):
+ # 	if i != 2:
+#		print "Distance: %s" % number_string  
+ # 		segment.writeDigit(i, int(number_string[i]));
 
 
 
-  #print "Distance : %s" % number_string[0]
+  #print "Distance : %s" % number_string
 
   #segment.writeDigit(1, int(number_string[1]))
   #segment.writeDigit(3, int(number_string[2]))
