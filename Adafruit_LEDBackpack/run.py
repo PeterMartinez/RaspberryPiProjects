@@ -51,12 +51,12 @@ while True:
   # Apply adjustment to tweak result
   distance = distance - adjustment
   if int(distance) > 99:
-   show = int(distance)
-   number_string = str(show)
-   print "D: %s" %number_string
+    show = int(distance)
+    number_string = str(show)
+    print "D: %s" %number_string
     for i in range(0,4):
-    	if i != 2:
-		t segment.writeDigit(i, int(number_string[i]));
+      if i != 2 and i <= 3:
+        segment.writeDigit(i, int(number_string[i]));
 
   else:
     show = '{0:.2f}'.format(round(distance,2))
