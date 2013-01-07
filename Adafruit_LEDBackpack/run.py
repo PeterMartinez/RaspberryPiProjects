@@ -54,14 +54,15 @@ while True:
     show = int(distance)
     number_string = str(show)
 
-    for i in range(0,4):
-      if i != 2:
-        segment.writeDigit(i, int(number_string[i]));
+    #for i in range(0,4):
+      #if i != 2:
+       # segment.writeDigit(i, int(number_string[i]));
 
   else:
-    show = round(distance,2)
+    show = '{0:.2f}'.format(round(distance,2))
     number_string = str(show)    
     if show > 10:
+	      print "D: %s" %number_string
               segment.writeDigit(0, int(number_string[0]));
               segment.writeDigit(1, int(number_string[1]),True);
               segment.writeDigit(3, int(number_string[3]));
