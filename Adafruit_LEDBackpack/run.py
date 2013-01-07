@@ -57,11 +57,12 @@ while True:
   now = datetime.datetime.now()
   second = now.second
   
-  segment.writeDigit(0, number_string[0])
-  segment.writeDigit(1, number_string[1])
-  segment.writeDigit(3, number_string[2])
-  segment.writeDigit(4, number_string[3])
-  
+  #print "Distance : %s" % number_string[0]
+
+  segment.writeDigit(0, int(number_string[0]))
+  #segment.writeDigit(1, int(number_string[1]))
+  #segment.writeDigit(3, int(number_string[2]))
+  #segment.writeDigit(4, int(number_string[3])) 
   # Toggle color
   segment.setColon(second % 2)              # Toggle colon at 1Hz
   # Wait one second
