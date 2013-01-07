@@ -67,7 +67,10 @@ while True:
               segment.writeDigit(1, int(number_string[1]),True);
               segment.writeDigit(3, int(number_string[3]));
               segment.writeDigit(4, int(number_string[4]));
-    
+    else:
+              segment.writeDigit(1, int(number_string[1]),True);
+              segment.writeDigit(3, int(number_string[3]));
+              segment.writeDigit(4, int(number_string[4]));
   
   # Wait one second
   time.sleep(1)
