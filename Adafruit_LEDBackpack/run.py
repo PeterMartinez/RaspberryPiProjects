@@ -50,7 +50,12 @@ while True:
 
   # Apply adjustment to tweak result
   distance = distance - adjustment
-
+  show = 0;
+  if distance > 99:
+    show = int(distance);
+  else:
+    show = distance;
+    
   # print "Distance : %.1f" % distance
   number_string = str(distance)
   i=0
